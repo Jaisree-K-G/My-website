@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sustainability Proposals - E Sollutions Consultancy Private Limited</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="../images/logo.png" type="image/png">
+
+  
+  
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #032b35;
+    }
+
+    header {
+      width: 95%;
+      background-color: #eeeeee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: black;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+    }
+
+    .company-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #0800ca;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url('../images/banner-sp.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-buttons a {
+      padding: 0.75rem 1.5rem;
+      background-color: #4e54fd;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .hero-buttons a:hover {
+      background-color: #0800ca;
+    }
+
+    @media screen and (max-width: 100%) {
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+
+
+    .sustainability-section {
+  background-color: #ffffff;
+  padding: 5rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.sustainability-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.sustainability-container h2 {
+  font-size: 2.5rem;
+  color: #032b35;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.sustainability-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sustainability-box {
+  width: 240px;
+  text-align: center;
+}
+
+.sustainability-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.sustainability-styled-section {
+  background-color: #d5d7f7;
+  padding: 5rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sustainability-title h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #032b35;
+  font-weight: bold;
+  margin-bottom: 4rem;
+}
+
+.sustainability-block {
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+  position: relative;
+  border: 2px solid #cfd8dc;
+  border-radius: 10px;
+  padding: 2rem;
+  padding-top: 3rem;
+  background: #fefefe;
+}
+
+.block-title {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4e54fd;
+  color: white;
+  font-weight: bold;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.block-content ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.block-content ul li {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 0.6rem;
+}
+
+
+
+
+
+
+
+
+.back-home-section {
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background-color: #4e54fd;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background-color: #0800ca;
+  color:white;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <img src="../images/logo.png" alt="Logo" class="logo" />
+      <div class="company-name">E Sollutions Consultancy Private Limited</div>
+    </div>
+    <nav>
+      <a href="../index.html#about-us">About Us</a>
+      <a href="../index.html#team">Our Team</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact-us">Contact</a>
+    </nav>
+  </header>
+
+
+
+
+
+
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Sustainability Proposals</h1>
+      <p>Delivering quality and sustainability in every project, with precision and passion.</p>
+      <div class="hero-buttons">
+        <a href="../Index.html#contact-us">Contact Us</a>
+        <a href="../index.html">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="sustainability-section">
+    <div class="sustainability-container">
+      <h2>Sustainability Ideas</h2>
+      <div class="sustainability-items">
+  
+        <div class="sustainability-box">
+          <div class="sustainability-img">
+            <img src="../images/energy-efficiency.jpg" alt="Energy Efficiency">
+          </div>
+          <div class="sustainability-title">Energy Efficiency</div>
+        </div>
+  
+        <div class="sustainability-box">
+          <div class="sustainability-img">
+            <img src="../images/net-positive.jpg" alt="Net Positive">
+          </div>
+          <div class="sustainability-title">Net Positive</div>
+        </div>
+  
+        <div class="sustainability-box">
+          <div class="sustainability-img">
+            <img src="../images/decarbonization.jpg" alt="Decarbonization">
+          </div>
+          <div class="sustainability-title">Decarbonization</div>
+        </div>
+  
+        <div class="sustainability-box">
+          <div class="sustainability-img">
+            <img src="../images/circular-design.jpg" alt="Circular Design">
+          </div>
+          <div class="sustainability-title">Circular Design</div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+
+
+  <section class="sustainability-styled-section">
+    <div class="sustainability-title">
+      <h2>Sustainability</h2>
+    </div>
+  
+    <!-- START BLOCK -->
+    <div class="sustainability-block">
+      <div class="block-title">Energy Efficiency</div>
+      <div class="block-content">
+        <ul>
+          <li>Office Area: 30% Power savings from Baseline</li>
+          <li>Towards Net Positive Energy</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">Energy Monitoring</div>
+      <div class="block-content">
+        <ul>
+          <li>Real-time monitoring of energy for resource efficiency</li>
+          <li>Advanced Energy Metering</li>
+          <li>Efficient BMS for all systems</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">Renewable Energy</div>
+      <div class="block-content">
+        <ul>
+          <li>100%+ total energy offset via renewables</li>
+          <li>Net Positive Energy Target</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">EV Requirements</div>
+      <div class="block-content">
+        <ul>
+          <li>Min. 5% EV charging points</li>
+          <li>Infrastructure for 100% EV-readiness</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">Water Management</div>
+      <div class="block-content">
+        <ul>
+          <li>100% Treatment & Reuse of Wastewater</li>
+          <li>50% Reduction in Potable Water Use</li>
+          <li>Rain Water Harvesting – 90th percentile</li>
+          <li>Alt. water for irrigation & flushing</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">Water Quality</div>
+      <div class="block-content">
+        <ul>
+          <li>Filtered Drinking Water</li>
+          <li>Monitor Total Dissolved Solids (TDS)</li>
+          <li>Monthly/Quarterly Quality Reports</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">Water Monitoring</div>
+      <div class="block-content">
+        <ul>
+          <li>Metering for irrigation, flushing, CT makeup etc.</li>
+          <li>Overflow alarms for cooling towers</li>
+          <li>Quarterly testing & reporting</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">Waste Management</div>
+      <div class="block-content">
+        <ul>
+          <li>100% Organic & Sewage Waste Treatment</li>
+          <li>>95% C&D waste diverted from landfill</li>
+          <li>Certified tie-ups for recycling and e-waste</li>
+          <li>Segregation at source</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">IAQ Monitoring</div>
+      <div class="block-content">
+        <ul>
+          <li>Fresh air as per ASHRAE 62.1-2016</li>
+          <li>Monitor PM2.5, PM10, CO2, TVOCs, Formaldehyde</li>
+          <li>Construction pollution control</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="sustainability-block">
+      <div class="block-title">Thermal Comfort</div>
+      <div class="block-content">
+        <ul>
+          <li>Complies with ASHRAE Standard 55</li>
+          <li>Air speed, temp & RH maintained in AC areas</li>
+        </ul>
+      </div>
+    </div>
+  
+  </section>
+  
+
+
+
+
+
+
+<section class="back-home-section">
+  <div class="back-home-container">
+    <a href="../index.html" class="back-home-btn">← Back to Home Page</a>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer style="background-color: #4e54fd; color: white; text-align: center; padding: 1rem 1rem; font-family: 'Segoe UI', sans-serif;">
+  <p style="margin: 0; font-size: 0.75rem;">&copy; 2025 E Sollutions Consultancy Private Limited. All Rights Reserved.</p>
+</footer>
+
+
+</body>
+</html>

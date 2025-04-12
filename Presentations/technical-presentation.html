@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technical Presentation - E Sollutions Consultancy Private Limited</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="../Images/logo.png" type="image/png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      color: #032b35;
+    }
+
+    header {
+      width: 95%;
+      background-color: #eeeeee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: black;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+    }
+
+    .company-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #0800ca;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: url('../images/banner-tp.jpg') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.75); /* Semi-transparent overlay */
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero-buttons a {
+      padding: 0.75rem 1.5rem;
+      background-color: #4e54fd;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .hero-buttons a:hover {
+      background-color: #0800ca;
+    }
+
+    @media screen and (max-width: 100%) {
+      nav {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+
+.flowchart-section {
+  padding: 5rem 2rem;
+  background-color: #d5d7f7;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.flowchart-title {
+  font-size: 2.5rem;
+  color: #032b35;
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+.flowchart-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.flow-item {
+  background-color: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 12px;
+  width: 160px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.flow-item:hover {
+  transform: translateY(-5px);
+}
+
+.flow-item i {
+  font-size: 28px;
+  color: #4e54fd;
+  margin-bottom: 1rem;
+}
+
+.flow-item h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: black;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  color: #0800ca;
+  margin: 0 0.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .arrow {
+    display: none;
+  }
+
+  .flow-item {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+.efficient-mepf-section {
+  background-color: #ffffff;
+  padding: 5rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #032b35;
+}
+
+.efficient-mepf-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.efficient-mepf-section .description {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.mepf-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  list-style: disc;
+}
+
+.mepf-list li {
+  margin-bottom: 0.8rem;
+}
+
+.detail-design-section {
+  background-color: #d5d7f7;
+  padding: 5rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.design-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.design-container h2 {
+  font-size: 2.5rem;
+  color: #032b35;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.design-container p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.flow-scroll {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+
+  /* Hide scrollbar cross-browser */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.flow-scroll::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+
+.flow-row {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  min-width: 1400px; /* Extend as needed */
+}
+
+.flow-step {
+  flex: 0 0 auto;
+  background-color: #f2f7fa;
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+  font-size: 0.95rem;
+  color: #032b35;
+  min-width: 220px;
+  transition: transform 0.3s ease;
+}
+
+.flow-step:hover {
+  transform: translateY(-5px);
+}
+
+.flow-step span {
+  background: #4e54fd;
+  color: #fff;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+  line-height: 28px;
+  font-size: 0.85rem;
+}
+
+.flow-arrow {
+  font-size: 24px;
+  color: #0800ca;
+  flex-shrink: 0;
+}
+
+
+
+.level-detail-section {
+  background-color: #f9f9f9;
+  padding: 5rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.level-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.level-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #032b35;
+  margin-bottom: 1rem;
+}
+
+.level-container .intro {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 3rem;
+}
+
+.level-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.level-card {
+  background-color: #aeb2fc;
+  padding: 2rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease;
+}
+
+.level-card:hover {
+  transform: translateY(-6px);
+}
+
+.level-card i {
+  font-size: 28px;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.level-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #032b35;
+  line-height: 1.5;
+}
+
+.timeline-modern-section {
+  background-color: #d5d7f7;
+  padding: 5rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.timeline-modern-container {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.timeline-modern-container h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #032b35;
+  margin-bottom: 3rem;
+}
+
+.timeline-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.timeline-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  flex: 0 0 320px;
+  text-align: left;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  background-color: #032b35;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.card-content h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #032b35;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.timeline-disclaimer {
+  margin-top: 3rem;
+  font-size: 1rem;
+  color: #7a6e59;
+  background-color: #fff8e1;
+  padding: 1.2rem 1.5rem;
+  border-left: 4px solid #0800ca;
+  border-radius: 8px;
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.value-added-modern {
+  background: #f4f6f9;
+  padding: 5rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.value-wrap {
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.value-wrap h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #032b35;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+.value-item {
+  background: white;
+  display: flex;
+  align-items: flex-start;
+  padding: 1.5rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s;
+}
+
+.value-item:hover {
+  background: #eef5f8;
+}
+
+.value-item .icon {
+  font-size: 22px;
+  background: #4e54fd;
+  color: white;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1.2rem;
+  flex-shrink: 0;
+}
+
+.value-item p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #032b35;
+}
+
+
+.back-home-section {
+  padding: 3rem 1rem;
+  background-color: #aeb2fc;
+  text-align: center;
+}
+
+.back-home-btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.back-home-btn:hover {
+  background-color: #4e54fd;
+  color:white;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <img src="../images/logo.png" alt="Logo" class="logo" />
+      <div class="company-name">E Sollutions Consultancy Private Limited</div>
+    </div>
+    <nav>
+      <a href="../index.html#about-us">About Us</a>
+      <a href="../index.html#team">Our Team</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact-us">Contact</a>
+    </nav>
+  </header>
+
+
+
+
+
+
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Technical Presentaion</h1>
+      <p>Delivering quality and sustainability in every project, with precision and passion.</p>
+      <div class="hero-buttons">
+        <a href="../index.html#contact-us">Contact Us</a>
+        <a href="../index.html">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+<section class="flowchart-section">
+  <div class="container">
+    <h2 class="flowchart-title">Design Approach</h2>
+    <div class="flowchart-steps">
+      
+      <div class="flow-item">
+        <i class="fas fa-pencil-ruler"></i>
+        <h4>Optimised Design</h4>
+      </div>
+      <div class="arrow">→</div>
+
+      <div class="flow-item">
+        <i class="fas fa-puzzle-piece"></i>
+        <h4>Customised Solutions</h4>
+      </div>
+      <div class="arrow">→</div>
+
+      <div class="flow-item">
+        <i class="fas fa-microchip"></i>
+        <h4>Efficient Technology</h4>
+      </div>
+      <div class="arrow">→</div>
+
+      <div class="flow-item">
+        <i class="fas fa-recycle"></i>
+        <h4>Recycle - Reuse</h4>
+      </div>
+      <div class="arrow">→</div>
+
+      <div class="flow-item">
+        <i class="fas fa-desktop"></i>
+        <h4>Control & Monitoring</h4>
+      </div>
+      <div class="arrow">→</div>
+
+      <div class="flow-item">
+        <i class="fas fa-tasks"></i>
+        <h4>Testing & Commissioning</h4>
+      </div>
+      <div class="arrow">→</div>
+
+      <div class="flow-item">
+        <i class="fas fa-check-circle"></i>
+        <h4>Post Occupancy Review</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="efficient-mepf-section">
+  <div class="container">
+    <h2>Efficient MEPF Design</h2>
+    <p class="description">
+      Every building is unique and requires appropriate design features, but some of the measures are highly effective in almost all the building projects like:
+    </p>
+    <ul class="mepf-list">
+      <li>Sustainability, Reliability & Scalability</li>
+      <li>Must meet all building codes specified by NBC / IS / NFPA / NABH & local government</li>
+      <li>Well-designed MEP system working at optimal performance to promote energy savings</li>
+      <li>Equipment with high efficiency</li>
+      <li>Glare-free lighting</li>
+      <li>Maintaining Good Indoor Air Quality (IAQ)</li>
+      <li>Regulating internal temperatures & humidity</li>
+      <li>Ease of operation & maintenance</li>
+      <li>Flexibility and modularity built into the design for future needs if any</li>
+      <li>Use of latest technology</li>
+      <li>Cost optimization towards both capital and running cost</li>
+      <li>Control of CO<sub>2</sub> emissions</li>
+      <li>Post Occupancy Review</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- Level of Detail in Design Section -->
+<section class="detail-design-section">
+  <div class="design-container">
+    <h2>Level of Detail in Design</h2>
+    <p>Process flow of any project carried out is as follows:</p>
+
+    <div class="flow-scroll">
+      <div class="flow-row">
+
+        <div class="flow-step"><span>1 </span> &nbsp;Site Duediligence</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>2 </span> &nbsp;Requirements from Client / PMC</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>3 </span> &nbsp;Client & Builder Questionnaire</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>4</span> &nbsp;Review DBR with Client / PMC</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>5</span> &nbsp;Design Basis Report</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>6</span> &nbsp;Mapping MEP on Architect Plan</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>7</span> &nbsp;Tender Document, Specs, and Makes</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>8</span> &nbsp;Design Drawings</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>9</span> &nbsp;Coordinated CFC Drawings</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>10</span> &nbsp;Shop Drawing / Submittal Approvals</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>11</span> &nbsp;Construction Site Inspections</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>12</span> &nbsp;Site Audit Reports</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>13</span> &nbsp;Testing and Commissioning</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>14</span> &nbsp;Project Closure</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>15</span> &nbsp;Approval of As Built Drawings</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-step"><span>16</span> &nbsp;DLP Period Design Support</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="level-detail-section">
+  <div class="level-container">
+    <h2>Level of Detail in Design</h2>
+    <p class="intro">
+      Our deliverables ensure coordination, quality, and precision throughout the project life cycle.
+    </p>
+
+    <div class="level-grid">
+      <div class="level-card">
+        <i class="fas fa-project-diagram"></i>
+        <p>All deliverables are MEP coordinated internally</p>
+      </div>
+
+      <div class="level-card">
+        <i class="fas fa-user-check"></i>
+        <p>Dedicated SPOC for every deliverable</p>
+      </div>
+
+      <div class="level-card">
+        <i class="fas fa-drafting-compass"></i>
+        <p>Tender drawings match GFC quality</p>
+      </div>
+
+      <div class="level-card">
+        <i class="fas fa-calculator"></i>
+        <p>Software-based voltage, lux, load & short circuit calculations</p>
+      </div>
+
+      <div class="level-card">
+        <i class="fas fa-clipboard-list"></i>
+        <p>Accurate BOQ quantification</p>
+      </div>
+
+      <div class="level-card">
+        <i class="fas fa-cube"></i>
+        <p>BIM implementation when project requires</p>
+      </div>
+
+      <div class="level-card">
+        <i class="fas fa-people-arrows"></i>
+        <p>Collaboration with all consultants for integrated delivery</p>
+      </div>
+
+      <div class="level-card">
+        <i class="fas fa-file-alt"></i>
+        <p>Shop drawings align closely with GFC drawings</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="timeline-modern-section">
+  <div class="timeline-modern-container">
+    <h2>Timelines</h2>
+
+    <div class="timeline-card-list">
+
+      <div class="timeline-card">
+        <div class="step-number">01</div>
+        <div class="card-content">
+          <h4>Email Response</h4>
+          <p>Any mail received shall be replied within 24–48 hrs depending on the data needed.</p>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="step-number">02</div>
+        <div class="card-content">
+          <h4>Concept Design</h4>
+          <p>Completed in 7 working days including DBR, budget cost, and MEP space planning.</p>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="step-number">03</div>
+        <div class="card-content">
+          <h4>Detailed Design</h4>
+          <p>Closed in 10 working days. Involves DBR finalisation and close coordination with architects and consultants.</p>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="step-number">04</div>
+        <div class="card-content">
+          <h4>Tender Documentation</h4>
+          <p>Closed in 7 working days post-approval of detailed design deliverables.</p>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="step-number">05</div>
+        <div class="card-content">
+          <h4>Vendor Queries</h4>
+          <p>Pre-bid queries and technical evaluation replies are addressed within 1–2 working days.</p>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <div class="step-number">06</div>
+        <div class="card-content">
+          <h4>GFC Drawings</h4>
+          <p>Developed in 30 working days post-tender. Drawings are MEP coordinated and aligned with other consultants.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="timeline-disclaimer">
+      <strong>Note:</strong> Above timelines may vary based on external team approvals or project-specific requirements.
+    </div>
+  </div>
+</section>
+
+<section class="value-added-modern">
+  <div class="value-wrap">
+    <h2>Value Added</h2>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-bolt"></i></div>
+      <p>Energy with PUE efficiency & water conservation measures shall be implemented</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-wind"></i></div>
+      <p>Indoor air quality & wellness as per ASHRAE standards, addressing COVID-19 requirements</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-cogs"></i></div>
+      <p>Optimized building system layout to enhance performance with reasonable cost</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-tools"></i></div>
+      <p>Design ensures ease of construction for contractors</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-wrench"></i></div>
+      <p>Design ensures ease of maintenance for facility teams</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-eye"></i></div>
+      <p>Designs meet aesthetics without compromising efficiency</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-users-cog"></i></div>
+      <p>Clearly defined roles & collaboration with the entire design team</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-handshake"></i></div>
+      <p>Team-based problem-solving for fast resolution</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-drafting-compass"></i></div>
+      <p>Early coordination during space planning reduces future errors</p>
+    </div>
+
+    <div class="value-item">
+      <div class="icon"><i class="fas fa-check-circle"></i></div>
+      <p>Team accountability for resolving issues throughout the project</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="back-home-section">
+  <div class="back-home-container">
+    <a href="index.html" class="back-home-btn">← Back to Home Page</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer style="background-color: #4e54fd; color: white; text-align: center; padding: 1rem 1rem; font-family: 'Segoe UI', sans-serif;">
+  <p style="margin: 0; font-size: 0.75rem;">&copy; 2025 E Sollutions Consultancy Private Limited. All Rights Reserved.</p>
+</footer>
+
+
+</body>
+</html>
