@@ -55,10 +55,10 @@
     }
 
     /* Hero Section */
-    .hero {
+.hero {
       position: relative;
       background: url('../images/banner-rivet.jpg') center/cover no-repeat;
-      height: 80vh;
+      height: 85vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -71,7 +71,7 @@
       content: '';
       position: absolute;
       top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+      background: rgba(0, 0, 0, 0.70); /* Semi-transparent overlay */
       z-index: 1;
     }
 
@@ -127,12 +127,30 @@
         font-size: 1rem;
       }
     }
-    .bim-capability-section {
-  background-color: #ffffff;
-  padding: 5rem 2rem;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
+    /* Animation base state */
+.hero-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
 }
+
+/* When in view */
+.animate-hero-section.visible .hero-fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-hero-section.visible .hero-fade-up:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.animate-hero-section.visible .hero-fade-up:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.animate-hero-section.visible .hero-fade-up:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+
 
 .bim-container {
   max-width: 1200px;
@@ -182,6 +200,33 @@
   color: #333;
   line-height: 1.6;
 }
+
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bim-box {
+  max-width: 320px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bim-box.visible {
+  animation: fadeInSlideUp 0.8s ease forwards;
+}
+
+.bim-box:nth-child(1).visible { animation-delay: 0.1s; }
+.bim-box:nth-child(2).visible { animation-delay: 0.2s; }
+.bim-box:nth-child(3).visible { animation-delay: 0.3s; }
 
 
 
@@ -241,6 +286,38 @@
   color: #032b35;
   margin: 0;
 }
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the USP section and its items */
+.usp-container h2,
+.usp-box {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.usp-container h2.visible,
+.usp-box.visible {
+  animation: fadeInSlideUp 0.8s ease forwards;
+}
+
+.usp-container h2.visible { animation-delay: 0.2s; }
+.usp-box:nth-child(1).visible { animation-delay: 0.3s; }
+.usp-box:nth-child(2).visible { animation-delay: 0.4s; }
+.usp-box:nth-child(3).visible { animation-delay: 0.5s; }
+
+
+
+
 
 
 .back-home-section {
@@ -287,11 +364,11 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero animate-hero-section">
     <div class="hero-content">
-      <h1>In-house Capabilities with Rivet</h1>
-      <p>Delivering quality and sustainability in every project, with precision and passion.</p>
-      <div class="hero-buttons">
+      <h1 class="hero-fade-up">In-house Capabilities with Rivet</h1>
+      <p class="hero-fade-up">Delivering quality and sustainability in every project, with precision and passion.</p>
+      <div class="hero-buttons hero-fade-up">
         <a href="../index.html#contact-us">Contact Us</a>
         <a href="../index.html">Back to Home</a>
       </div>
@@ -331,7 +408,8 @@
   
       </div>
     </div>
-  </section>
+</section>
+
   
 
 
@@ -389,7 +467,57 @@
 <footer style="background-color: #4e54fd; color: white; text-align: center; padding: 1rem 1rem; font-family: 'Segoe UI', sans-serif;">
   <p style="margin: 0; font-size: 0.75rem;">&copy; 2025 E Sollutions Consultancy Private Limited. All Rights Reserved.</p>
 </footer>
+<script>
+  const heroSection = document.querySelector('.animate-hero-section');
 
+const heroObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.4 });
+
+if (heroSection) {
+  heroObserver.observe(heroSection);
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const bimBoxes = document.querySelectorAll(".bim-box");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    bimBoxes.forEach(box => observer.observe(box));
+  });
+  document.addEventListener("DOMContentLoaded", () => {
+    const headings = document.querySelectorAll(".usp-container h2");
+    const boxes = document.querySelectorAll(".usp-box");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    // Observe heading and boxes
+    headings.forEach(heading => observer.observe(heading));
+    boxes.forEach(box => observer.observe(box));
+  });
+
+</script>
 
 </body>
 </html>
