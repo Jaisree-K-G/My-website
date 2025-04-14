@@ -130,6 +130,120 @@
         font-size: 1rem;
       }
     }
+    /* Animation base state */
+.hero-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+/* When in view */
+.animate-hero-section.visible .hero-fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-hero-section.visible .hero-fade-up:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.animate-hero-section.visible .hero-fade-up:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.animate-hero-section.visible .hero-fade-up:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+
+
+
+
+
+
+.about-modern-section {
+      padding: 6rem 2rem;
+      background-color: #fefefe;
+    }
+
+    .about-modern-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
+    .about-left {
+      flex: 1;
+      min-width: 280px;
+      border-left: 4px solid #4e54fd;
+      padding-left: 2rem;
+    }
+
+    .about-left h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #032b35;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-left span {
+      font-size: 1rem;
+      color: #777;
+      font-style: italic;
+    }
+
+    .about-right {
+      flex: 2;
+      min-width: 320px;
+      padding-right: 1rem;
+    }
+
+    .about-right p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.7rem;
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    /* Animation Triggered State */
+    .fade-in.animated {
+      animation: fadeInUp 1.5s ease-out forwards;
+    }
+
+    .delay-0 { animation-delay: 0.3s; }
+    .delay-1 { animation-delay: 0.6s; }
+    .delay-2 { animation-delay: 0.9s; }
+    .delay-3 { animation-delay: 1.2s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-modern-container {
+        flex-direction: column;
+      }
+      .about-left {
+        border-left: none;
+        border-top: 4px solid #4e54fd;
+        padding-top: 1rem;
+        padding-left: 0;
+      }
+    }
+
+
+
+
+
+
+
 .presence {
   padding: 4rem 10rem;
   background-color: #d5d7f7;
@@ -179,6 +293,63 @@
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 
 }
+
+.presence-image,
+.presence-locations h2,
+.city {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.presence.visible .presence-image {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+.presence.visible .presence-locations h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.presence.visible .city:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.presence.visible .city:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+.presence.visible .city:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+.presence.visible .city:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.2s;
+}
+
+.presence.visible .city:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.4s;
+}
+
+
+
+
+
+
+
 .accreditations {
   padding: 4rem 1rem;
   text-align: center;
@@ -230,6 +401,60 @@
   color: #333;
   line-height: 1.6;
 }
+/* Initial state before animation */
+.accreditations h2,
+.accreditation-item,
+.accreditation-note {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+
+/* When in view, animate */
+.accreditations.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.accreditations.visible .accreditation-item:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+.accreditations.visible .accreditation-item:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.accreditations.visible .accreditation-item:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+.accreditations.visible .accreditation-item:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+.accreditations.visible .accreditation-item:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.2s;
+}
+
+.accreditations.visible .accreditation-note {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.4s;
+}
+
+
+
+
+
+
+
 .our-team {
   padding: 4rem 1rem;
   text-align: center;
@@ -299,6 +524,342 @@
   background-color: #4e54fd;
   color: white;
 }
+
+/* Initial animation state */
+.our-team h2,
+.team-member,
+.org-chart-link {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.9s ease;
+}
+
+/* When visible: trigger animations */
+.our-team.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.our-team.visible .team-member:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+.our-team.visible .team-member:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s;
+}
+.our-team.visible .team-member:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+.our-team.visible .team-member:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.9s;
+}
+.our-team.visible .team-member:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.1s;
+}
+
+.our-team.visible .org-chart-link {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.4s;
+}
+
+
+
+
+
+.scope-section {
+  background-color: #ffffff;
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.scope-container {
+  max-width: 1200px;
+  margin: auto;
+  color: #032b35;
+}
+
+.scope-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid #d5d7f7;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.scope-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.scope-left {
+  flex: 1 1 45%;
+  min-width: 300px;
+}
+
+.scope-left h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.scope-list {
+  border-left: 4px solid #d5d7f7;
+  padding-left: 1rem;
+  line-height: 1.8;
+}
+
+.scope-right {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.scope-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.scope-box {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 20px;
+  background-color: #c8caf9;
+  transition: all 0.5s ease;
+}
+
+.scope-box h4 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.scope-box ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  line-height: 1.6;
+}
+
+/* --- Scroll Animation Base State --- */
+.scope-section h2,
+.scope-left,
+.scope-box {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease;
+}
+
+/* --- Animate When Visible --- */
+.scope-section.visible h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.scope-section.visible .scope-left {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.scope-section.visible .scope-box:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.scope-section.visible .scope-box:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+.scope-section.visible .scope-box:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+.scope-section.visible .scope-box:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.2s;
+}
+
+
+
+
+.services-section {
+  padding: 6rem 2rem;
+  background-color: #d5d7f7;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.services-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #032b35;
+  text-align: center;
+}
+
+.service-box {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease;
+  text-align: center;
+}
+
+.service-box h4 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+  color: #032b35;
+}
+
+.service-box p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Scroll animation delays */
+.services-section.visible .service-box:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.services-section.visible .service-box:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.services-section.visible .service-box:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+.services-section.visible .service-box:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
+.services-section.visible .service-box:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 1s; }
+.services-section.visible .service-box:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 1.2s; }
+.services-section.visible .service-box:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 1.4s; }
+.services-section.visible .service-box:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 1.6s; }
+.services-section.visible .service-box:nth-child(9) { opacity: 1; transform: translateY(0); transition-delay: 1.8s; }
+.services-section.visible .service-box:nth-child(10) { opacity: 1; transform: translateY(0); transition-delay: 2s; }
+.services-section.visible .service-box:nth-child(11) { opacity: 1; transform: translateY(0); transition-delay: 2.2s; }
+
+
+
+
+.area-of-works-section {
+  padding: 6rem 2rem;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.area-of-works-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #032b35;
+  text-align: center;
+}
+
+/* Base animation state */
+.work-card {
+  width: 250px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.9s ease;
+}
+
+/* Animated state (triggered by JS) */
+.area-of-works-section.visible .work-card:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+.area-of-works-section.visible .work-card:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+.area-of-works-section.visible .work-card:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+.area-of-works-section.visible .work-card:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+.area-of-works-section.visible .work-card:nth-child(5) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+.area-of-works-section.visible .work-card:nth-child(6) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.2s;
+}
+.area-of-works-section.visible .work-card:nth-child(7) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.4s;
+}
+.area-of-works-section.visible .work-card:nth-child(8) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.6s;
+}
+
+
+
+
+
+.projects-section {
+  padding: 6rem 2rem;
+  background-color: #d5d7f7;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.projects-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #032b35;
+}
+
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.project-box {
+  width: 200px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.projects-section.visible .project-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.count {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #4e54fd;
+  margin-bottom: 0.5rem;
+}
+
+
+
+
+
 
 .explore-contact-container {
     display: flex;
@@ -407,6 +968,7 @@
 
   .contact-us form {
     margin-top: 1rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -446,6 +1008,12 @@
       flex-direction: column;
     }
 
+    @media (max-width: 768px) {
+  .contact-us form {
+    margin-bottom: 3rem;
+  }
+}
+
     .explore-more,
     .contact-us {
       flex: 1 1 100%;
@@ -453,9 +1021,50 @@
   }
 
 
+  /* Base animation state */
+.animate-left,
+.animate-right,
+.animate-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease;
+}
+
+/* When visible */
+.explore-contact-section.visible .animate-left {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+.explore-contact-section.visible .animate-right {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.5s;
+}
+
+.explore-contact-section.visible .animate-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.explore-contact-section.visible .explore-btn:nth-child(2) { transition-delay: 0.2s; }
+.explore-contact-section.visible .explore-btn:nth-child(3) { transition-delay: 0.4s; }
+.explore-contact-section.visible .explore-btn:nth-child(4) { transition-delay: 0.6s; }
+.explore-contact-section.visible .explore-btn:nth-child(5) { transition-delay: 0.8s; }
+.explore-contact-section.visible .explore-btn:nth-child(6) { transition-delay: 1s; }
+
+
+
 
   </style>
 </head>
+
+
+
+
+
+
 <body>
 
   <!-- Header -->
@@ -476,49 +1085,48 @@
 
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero animate-hero-section">
     <div class="hero-content">
-      <h1>Innovative MEPF Solutions for Modern Infrastructure</h1>
-      <p>Delivering quality and sustainability in every project, with precision and passion.</p>
-      <div class="hero-buttons">
+      <h1 class="hero-fade-up">Innovative MEPF Solutions for Modern Infrastructure</h1>
+      <p class="hero-fade-up">Delivering quality and sustainability in every project, with precision and passion.</p>
+      <div class="hero-buttons hero-fade-up">
         <a href="#contact-us">Contact Us</a>
         <a href="#services">Explore Services</a>
       </div>
     </div>
   </section>
+  
 
 
 
 
 
-<section id="about-us" style="padding: 4rem 0.5rem; background-color: #FFFFFF; text-align: center;">
-  <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2.5rem; margin-bottom: 2rem; color: #032b35;">
-    About Us
-  </h2>
-  <div style="max-width: 1200px; margin: 0 auto;">
-    <p style="font-size: 1.1rem; line-height: 1.8; color: #333;">
-      We (E SOLLUTIONS CONSULTANCY PVT LTD) Celebrating two decades of excellence in <b>Mechanical, Electrical, and Plumbing, Fire Protection Systems & iBMS, (MEPF) consultancy services, </b> has been at the forefront of delivering cutting-edge solutions to clients Pan India. Established in 2004, our firm has earned a distinguished reputation for reliability, innovation, and technical prowess in the built environment. We are Presently 150+ Engineers and having offices in <b>Bangalore, Hyderabad, Chennai, Mumbai & Delhi</b> with in-house BIM team.
-    </p>
-    <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-top: 1.5rem;">
-      At E Sollutions, we understand that every project is unique. With our extensive experience and deep industry knowledge, we specialize in providing tailored MEPF solutions that not only meet but exceed our clients' expectations. From initial concept to final Testing & commissioning, our dedicated team of professionals ensures seamless integration and optimal performance of MEPF systems in every endeavor.
-    </p>
-     <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-top: 1.5rem;">
-      Our commitment to quality and sustainability drives us to continuously push the boundaries of engineering excellence. Over the past two decades, we have successfully delivered projects across various sectors including <b>IT / ITES Clients, Core Manufacturing Industries, Commercial Base Buildings, Residential, Healthcare, and High End Hotel and Resorts,</b> earning the trust of End users, leading developers, Project Management Consultants, Architects and D&B contractors.
-    </p>
-     <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-top: 1.5rem;">
-     The business has developed an excellent reputation for delivering a high quality professional service and as a result enjoys long term relationships with an established repeated client base.
-     </p>
-     <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-top: 1.5rem;">
-     As we look towards the future, E Sollutions MEP Consultants remains steadfast in our mission to deliver unparalleled MEPF consultancy services that set industry benchmarks.
-     </p>
-     <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-top: 1.5rem;">
-     Join us as we continue to lead with expertise, integrity, and a passion for excellence in everything we do.
-     </p>
-     <p style="font-size: 1.1rem; line-height: 1.8; color: #333; margin-top: 1.5rem;">
-     Our aim is: <b>“To exceed our clients expectations by providing the best design and services</b>
-     </p>
-  </div>
-</section>
+  <section id="about-us" class="about-modern-section scroll-trigger-about">
+    <div class="about-modern-container">
+      <div class="about-left">
+        <h1>About us</h1>
+        <span>— 20 Years of Sustainable MEPF Design</span>
+      </div>
+      <div class="about-right">
+        <p class="fade-in delay-0">
+          <strong>We (E Sollutions Consultancy Pvt Ltd)</strong>, with over two decades of experience, delivers world-class MEPF and iBMS consultancy services across India. Since 2004, we’ve partnered with leading clients to build technically sound, energy-efficient spaces.
+        </p>
+        <p class="fade-in delay-1">
+          Our 150+ engineers operate from offices in <strong>Chennai, Bangalore, Hyderabad, Mumbai, and Delhi</strong>. We provide integrated Mechanical, Electrical, Plumbing, Fire Protection, and Smart Building design — backed by our in-house BIM team.
+        </p>
+        <p class="fade-in delay-2">
+          E Sollutions designs MEPF systems for <strong>IT/ITES campuses, hospitals, data centers, manufacturing, hotels, and high-rise residences</strong>. From concept to commissioning, we deliver detail-driven solutions with full lifecycle performance.
+        </p>
+        <p class="fade-in delay-3">
+          Our promise: <strong>“To exceed client expectations with customized engineering, quality service, and long-term reliability.”</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
 
 <section class="presence">
   <div class="presence-container">
@@ -625,17 +1233,17 @@
 
 
 <!-- Scope of Works Section -->
-<section style="background-color: #ffffff; padding: 4rem 2rem;">
-  <div style="max-width: 1200px; margin: auto; font-family: 'Segoe UI', sans-serif; color: #032b35;">
+<section id="scope-of-works" class="scope-section">
+  <div class="scope-container">
 
-    <h2 style="text-align: center; font-size: 2rem; margin-bottom: 3rem; border-bottom: 2px solid #d5d7f7; display: inline-block; padding-bottom: 0.5rem;">Scope of Works</h2>
+    <h2>Scope of Works</h2>
 
-    <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-      
-      <!-- Left Side - MEP Design -->
-      <div style="flex: 1 1 45%; min-width: 300px;">
-        <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">MEP Design Consultancy</h3>
-        <div style="border-left: 4px solid #d5d7f7; padding-left: 1rem; line-height: 1.8;">
+    <div class="scope-flex">
+
+      <!-- Left: MEP Design Consultancy -->
+      <div class="scope-left">
+        <h3>MEP Design Consultancy</h3>
+        <div class="scope-list">
           <p>Air-Conditioning & Ventilation System Engineering</p>
           <p>Electrical System Engineering ELV System Engineering</p>
           <p>Building Management System Engineering</p>
@@ -648,14 +1256,13 @@
         </div>
       </div>
 
-      <!-- Right Side - 2x2 Grid -->
-      <div style="flex: 1 1 50%; min-width: 300px;">
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+      <!-- Right: 2x2 Grid -->
+      <div class="scope-right">
+        <div class="scope-grid">
 
-          <!-- Box 1 -->
-          <div style="border: 1px solid #ddd; padding: 1rem; border-radius: 20px; background-color: #c8caf9;">
-            <h4 style="font-size: 1rem; margin-bottom: 0.8rem;">MEP Peer Review / Value Engineering</h4>
-            <ul style="list-style-type: disc; padding-left: 1.2rem; line-height: 1.6;">
+          <div class="scope-box">
+            <h4>MEP Peer Review / Value Engineering</h4>
+            <ul>
               <li>MEP & Solar Systems</li>
               <li>Ventilation & Exhaust Systems</li>
               <li>Process / Utility Water Systems</li>
@@ -663,20 +1270,18 @@
             </ul>
           </div>
 
-          <!-- Box 2 -->
-          <div style="border: 1px solid #ddd; padding: 1rem; border-radius: 20px; background-color: #c8caf9;">
-            <h4 style="font-size: 1rem; margin-bottom: 0.8rem;">Technical On Site Inspection & Audit</h4>
-            <ul style="list-style-type: disc; padding-left: 1.2rem; line-height: 1.6;">
+          <div class="scope-box">
+            <h4>Technical On Site Inspection & Audit</h4>
+            <ul>
               <li>Electrical Safety Audit</li>
               <li>Commissioning, Testing & Balancing</li>
               <li>Inspection & Gap Analysis</li>
             </ul>
           </div>
 
-          <!-- Box 3 -->
-          <div style="border: 1px solid #ddd; padding: 1rem; border-radius: 20px; background-color: #c8caf9;">
-            <h4 style="font-size: 1rem; margin-bottom: 0.8rem;">Procurement / Contract Management</h4>
-            <ul style="list-style-type: disc; padding-left: 1.2rem; line-height: 1.6;">
+          <div class="scope-box">
+            <h4>Procurement / Contract Management</h4>
+            <ul>
               <li>On Site QA / QC / QS</li>
               <li>Procurement Assistance</li>
               <li>Capital Items Procurement</li>
@@ -684,10 +1289,9 @@
             </ul>
           </div>
 
-          <!-- Box 4 -->
-          <div style="border: 1px solid #ddd; padding: 1rem; border-radius: 20px; background-color: #c8caf9;">
-            <h4 style="font-size: 1rem; margin-bottom: 0.8rem;">Building Information Modeling</h4>
-            <ul style="list-style-type: disc; padding-left: 1.2rem; line-height: 1.6;">
+          <div class="scope-box">
+            <h4>Building Information Modeling</h4>
+            <ul>
               <li>BIM Concept Modeling</li>
               <li>BIM Tender Modeling</li>
               <li>BIM Shop Drawing Modeling</li>
@@ -697,6 +1301,7 @@
 
         </div>
       </div>
+
     </div>
     
   </div>
@@ -709,80 +1314,78 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- Services Offered Section -->
-<section id="services" style="padding: 6rem 2rem; background-color: #d5d7f7; font-family: 'Segoe UI', sans-serif;">
+<section id="services" class="services-section">
   <div style="max-width: 1300px; margin: auto; text-align: center;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: #032b35;">Services Offered</h2>
+    <h2>Services Offered</h2>
 
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
 
-      <!-- Service Box -->
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-bolt fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">Electrical – EHT, HT & LT</h4>
-        <p style="font-size: 0.9rem;">Design and implementation of high, medium, and low tension electrical systems.</p>
+        <h4>Electrical – EHT, HT & LT</h4>
+        <p>Design and implementation of high, medium, and low tension electrical systems.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-lightbulb fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">Lighting Design</h4>
-        <p style="font-size: 0.9rem;">Customized lighting plans for efficiency, ambiance, and aesthetics.</p>
+        <h4>Lighting Design</h4>
+        <p>Customized lighting plans for efficiency, ambiance, and aesthetics.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-gas-pump fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">Generator Works</h4>
-        <p style="font-size: 0.9rem;">End-to-end support for generator setup, backup, and integration.</p>
+        <h4>Generator Works</h4>
+        <p>End-to-end support for generator setup, backup, and integration.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-plug fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">UPS Works</h4>
-        <p style="font-size: 0.9rem;">Design and installation of uninterruptible power supply systems.</p>
+        <h4>UPS Works</h4>
+        <p>Design and installation of uninterruptible power supply systems.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-battery-full fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">Earthing Systems</h4>
-        <p style="font-size: 0.9rem;">LPS, surge protection, and structural earthing for safety and compliance.</p>
+        <h4>Earthing Systems</h4>
+        <p>LPS, surge protection, and structural earthing for safety and compliance.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-snowflake fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">HVAC Systems</h4>
-        <p style="font-size: 0.9rem;">Cooling, ventilation and air quality engineering for diverse spaces.</p>
+        <h4>HVAC Systems</h4>
+        <p>Cooling, ventilation and air quality engineering for diverse spaces.</p>
       </div>
 
-      <!-- Row 2 -->
-
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-fire-extinguisher fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">Fire Fighting</h4>
-        <p style="font-size: 0.9rem;">Fire alarm, detection, and suppression systems for complete safety.</p>
+        <h4>Fire Fighting</h4>
+        <p>Fire alarm, detection, and suppression systems for complete safety.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-bullhorn fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">Public Address</h4>
-        <p style="font-size: 0.9rem;">Audio systems for announcements, alerts, and emergency communication.</p>
+        <h4>Public Address</h4>
+        <p>Audio systems for announcements, alerts, and emergency communication.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-video fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">CCTV / Rodent</h4>
-        <p style="font-size: 0.9rem;">Surveillance and rodent repellent systems for secure environments.</p>
+        <h4>CCTV / Rodent</h4>
+        <p>Surveillance and rodent repellent systems for secure environments.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-network-wired fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">IT Networking</h4>
-        <p style="font-size: 0.9rem;">Robust networking solutions including iBMS and smart integration.</p>
+        <h4>IT Networking</h4>
+        <p>Robust networking solutions including iBMS and smart integration.</p>
       </div>
 
-      <div style="background: white; border-radius: 12px; padding: 2rem; width: 200px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+      <div class="service-box">
         <i class="fas fa-toilet fa-2x" style="color: #4e54fd;"></i>
-        <h4 style="margin: 1rem 0 0.5rem;">Health Engineering</h4>
-        <p style="font-size: 0.9rem;">Public health plumbing and sanitation solutions tailored to projects.</p>
+        <h4>Health Engineering</h4>
+        <p>Public health plumbing and sanitation solutions tailored to projects.</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -792,130 +1395,127 @@
 
 
 
-<section style="padding: 6rem 2rem; background-color: #ffffff; font-family: 'Segoe UI', sans-serif;">
+
+<section class="area-of-works-section">
   <div style="max-width: 1300px; margin: auto; text-align: center;">
     <h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: #032b35;">Area of Works</h2>
 
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-
-      <!-- Work Card -->
-      <div style="width: 250px; text-align: center;">
-        <img src="Images/Commercials.jpg" alt="Commercials" style="width: 100%; border-radius: 10px;">
+      <div class="work-card">
+        <img src="images/Commercials.jpg" alt="Commercials" style="width: 100%; border-radius: 10px;">
         <h4 style="margin-top: 1rem;">Commercials and Base Buildings</h4>
       </div>
-
-      <div style="width: 250px; text-align: center;">
-        <img src="Images/industrial.jpg" alt="Industrial" style="width: 100%; border-radius: 10px;">
+      <div class="work-card">
+        <img src="images/industrial.jpg" alt="Industrial" style="width: 100%; border-radius: 10px;">
         <h4 style="margin-top: 1rem;">Industrial & Warehouse Parks</h4>
       </div>
-
-      <div style="width: 250px; text-align: center;">
-        <img src="Images/data-centre.jpg" alt="Data Center" style="width: 100%; border-radius: 10px;">
+      <div class="work-card">
+        <img src="images/data-centre.jpg" alt="Data Center" style="width: 100%; border-radius: 10px;">
         <h4 style="margin-top: 1rem;">High End Data Centers</h4>
       </div>
-
-      <div style="width: 250px; text-align: center;">
-        <img src="Images/hospital.jpg" alt="Hospitals" style="width: 100%; border-radius: 10px;">
+      <div class="work-card">
+        <img src="images/hospital.jpg" alt="Hospitals" style="width: 100%; border-radius: 10px;">
         <h4 style="margin-top: 1rem;">Hospital, Healthcare, Bio Tech Projects</h4>
       </div>
-
-      <!-- Row 2 -->
-      <div style="width: 250px; text-align: center;">
-        <img src="Images/sky-scrapers.jpg" alt="Sky Scrapers" style="width: 100%; border-radius: 10px;">
+      <div class="work-card">
+        <img src="images/sky-scrapers.jpg" alt="Sky Scrapers" style="width: 100%; border-radius: 10px;">
         <h4 style="margin-top: 1rem;">Sky Scrapper Residential Towers</h4>
       </div>
-
-      <div style="width: 250px; text-align: center;">
-        <img src="Images/resorts.jpg" alt="Tourism" style="width: 100%; border-radius: 10px;">
+      <div class="work-card">
+        <img src="images/resorts.jpg" alt="Tourism" style="width: 100%; border-radius: 10px;">
         <h4 style="margin-top: 1rem;">Tourism, Resorts, Hotels Projects</h4>
       </div>
-
-      <div style="width: 250px; text-align: center;">
-        <img src="Images/environmental.jpg" alt="Environmental" style="width: 100%; border-radius: 10px;">
+      <div class="work-card">
+        <img src="images/environmental.jpg" alt="Environmental" style="width: 100%; border-radius: 10px;">
         <h4 style="margin-top: 1rem;">Environmental Engineering</h4>
       </div>
-
-      <div style="width: 250px; text-align: center;">
-        <img src="Images/qa-qc.jpg" alt="QA QC" style="width: 100%; border-radius: 10px;">
+      <div class="work-card">
+        <img src="images/qa-qc.jpg" alt="QA QC" style="width: 100%; border-radius: 10px;">
         <h4 style="margin-top: 1rem;">QA & QC Engineering</h4>
       </div>
-
     </div>
   </div>
 </section>
 
 
-<section style="padding: 6rem 2rem; background-color: #d5d7f7; font-family: 'Segoe UI', sans-serif;">
+
+
+
+
+
+<section class="projects-section">
   <div style="max-width: 1300px; margin: auto; text-align: center;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: #032b35;">Projects Handled So Far</h2>
+    <h2>Projects Handled So Far</h2>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 3rem;">
+    <div class="projects-container">
 
-      <div style="width: 200px;">
-        <div style="font-size: 2.5rem; font-weight: bold; color: #4e54fd;">20+</div>
-        <div style="font-size: 1rem; color: #333;">Data Centre Projects (Tier 3&4)</div>
+      <div class="project-box">
+        <div class="count" data-count="20">0</div>
+        <div>Data Centre Projects (Tier 3&4)</div>
       </div>
 
-      <div style="width: 200px;">
-        <div style="font-size: 2.5rem; font-weight: bold; color: #4e54fd;">900+</div>
-        <div style="font-size: 1rem; color: #333;">Fitouts & 38+ IT Base Buildings</div>
+      <div class="project-box">
+        <div class="count" data-count="900">0</div>
+        <div>Fitouts & 38+ IT Base Buildings</div>
       </div>
 
-      <div style="width: 200px;">
-        <div style="font-size: 2.5rem; font-weight: bold; color: #4e54fd;">50+</div>
-        <div style="font-size: 1rem; color: #333;">Core Manufacturing Factories</div>
+      <div class="project-box">
+        <div class="count" data-count="50">0</div>
+        <div>Core Manufacturing Factories</div>
       </div>
 
-      <div style="width: 200px;">
-        <div style="font-size: 2.5rem; font-weight: bold; color: #4e54fd;">40+</div>
-        <div style="font-size: 1rem; color: #333;">Hospitals and Pharma Projects</div>
+      <div class="project-box">
+        <div class="count" data-count="40">0</div>
+        <div>Hospitals and Pharma Projects</div>
       </div>
 
-      <div style="width: 200px;">
-        <div style="font-size: 2.5rem; font-weight: bold; color: #4e54fd;">30+</div>
-        <div style="font-size: 1rem; color: #333;">Star Hotels & Resorts</div>
+      <div class="project-box">
+        <div class="count" data-count="30">0</div>
+        <div>Star Hotels & Resorts</div>
       </div>
 
-      <div style="width: 200px;">
-        <div style="font-size: 2.5rem; font-weight: bold; color: #4e54fd;">1400+</div>
-        <div style="font-size: 1rem; color: #333;">Lakhs Sq.ft. Residential Projects</div>
+      <div class="project-box">
+        <div class="count" data-count="1400">0</div>
+        <div>Lakhs Sq.ft. Residential Projects</div>
       </div>
 
-      <div style="width: 200px;">
-        <div style="font-size: 2.5rem; font-weight: bold; color: #4e54fd;">4+</div>
-        <div style="font-size: 1rem; color: #333;">Airport Projects</div>
+      <div class="project-box">
+        <div class="count" data-count="4">0</div>
+        <div>Airport Projects</div>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
 <!-- Explore More + Contact Us Section -->
-<section id="contact-us" style="padding: 4rem 2rem; background-color: #f4f4f4;">
+<section id="contact-us" class="explore-contact-section">
   <div class="explore-contact-wrapper">
     
     <!-- Left Column: Explore More -->
-    <div class="explore-more">
+    <div class="explore-more animate-left">
       <h2>Explore More</h2>
-      <a href="Presentations/technical-presentation.html" class="explore-btn">Technical Presentation</a>
-      <a href="Presentations/revit-capability.html" class="explore-btn">In-House Capability with Revit</a>
-      <a href="Presentations/sustainability-proposals.html" class="explore-btn">Sustainability Proposals</a>
-      <a href="downloads/clientele.pdf" class="explore-btn">Clientele</a>
-      <a href="downloads/e-sollutions-company-profile.pdf" class="explore-btn" target="_blank">Download Full Company Profile</a>
+      <a class="explore-btn animate-up" href="presentations/technical-presentation.html" class="explore-btn">Technical Presentation</a>
+      <a class="explore-btn animate-up" href="presentations/revit-capability.html" class="explore-btn">In-House Capability with Revit</a>
+      <a class="explore-btn animate-up" href="presentations/sustainability-proposals.html" class="explore-btn">Sustainability Proposals</a>
+      <a class="explore-btn animate-up" href="downloads/clientele.pdf" class="explore-btn">Clientele</a>
+      <a class="explore-btn animate-up" href="downloads/e-sollutions-company-profile.pdf" class="explore-btn" target="_blank">Download Full Company Profile</a>
     </div>
 
     <!-- Right Column: Contact Us -->
-    <div class="contact-us">
+    <div class="contact-us animate-right">
       <h2>Contact Us</h2>
       <p><strong>Phone:</strong> <a href="tel:+919043000327">+91 9043000327</a></p>
       <p><strong>Email:</strong> <a href="mailto:info@esolutions.com">info@esolutions.com</a></p>
 
       <form action="mailto:info@esolutions.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
+        <input class="animate-up" type="text" name="name" placeholder="Your Name" required />
+        <input class="animate-up" type="email" name="email" placeholder="Your Email" required />
+        <textarea class="animate-up" name="message" placeholder="Your Message" required></textarea>
+        <button class="animate-up" type="submit">Send Message</button>
+        
       </form>
     </div>
 
@@ -927,6 +1527,162 @@
 <footer style="background-color: #4e54fd; color: white; text-align: center; padding: 1rem 1rem; font-family: 'Segoe UI', sans-serif;">
   <p style="margin: 0; font-size: 0.75rem;">&copy; 2025 E Sollutions Consultancy Private Limited. All Rights Reserved.</p>
 </footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.4 });
+
+  const presenceSection = document.querySelector('.presence');
+  if (presenceSection) {
+    observer.observe(presenceSection);
+  }
+
+  const accreditationsSection = document.querySelector('.accreditations');
+  const observer2 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (accreditationsSection) {
+    observer2.observe(accreditationsSection);
+  }
+
+  const teamSection = document.querySelector('.our-team');
+  const observer3 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (teamSection) {
+    observer3.observe(teamSection);
+  }
+
+  const scopeSection = document.querySelector('.scope-section');
+  const observerScope = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (scopeSection) {
+    observerScope.observe(scopeSection);
+  }
+  const servicesSection = document.querySelector('.services-section');
+
+  const observerServices = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (servicesSection) {
+    observerServices.observe(servicesSection);
+  }
+  const areaSection = document.querySelector('.area-of-works-section');
+
+  const observerArea = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (areaSection) {
+    observerArea.observe(areaSection);
+  }
+
+  const projectSection = document.querySelector('.projects-section');
+  const countElements = document.querySelectorAll('.count');
+  let hasCounted = false;
+
+  function countUp(el, target, duration) {
+    let start = 0;
+    let increment = target / (duration / 16);
+
+    const counter = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        el.innerText = target + "+";
+        clearInterval(counter);
+      } else {
+        el.innerText = Math.floor(start);
+      }
+    }, 16);
+  }
+
+  const observerProjects = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !hasCounted) {
+        entry.target.classList.add('visible');
+        countElements.forEach(el => {
+          const endVal = parseInt(el.getAttribute('data-count'));
+          countUp(el, endVal, 1500);
+        });
+        hasCounted = true;
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (projectSection) {
+    observerProjects.observe(projectSection);
+  }
+  const exploreContactSection = document.querySelector('.explore-contact-section');
+
+  const observerExplore = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (exploreContactSection) {
+    observerExplore.observe(exploreContactSection);
+  }
+  const heroSection = document.querySelector('.animate-hero-section');
+
+  const heroObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (heroSection) {
+    heroObserver.observe(heroSection);
+  }
+  const aboutSection = document.querySelector('.scroll-trigger-about');
+  const aboutParagraphs = aboutSection.querySelectorAll('.fade-in');
+
+  const observerAbout = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        aboutParagraphs.forEach(p => p.classList.add('animated'));
+      }
+    });
+  }, { threshold: 0.4 });
+
+  if (aboutSection) {
+    observerAbout.observe(aboutSection);
+  }
+</script>
 
 
 </body>

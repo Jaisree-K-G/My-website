@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arun Kumar K C - Profile</title>
+  <title>Arun Kumar - Profile</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Open+Sans&display=swap" rel="stylesheet"/>
   <style>
     body {
@@ -11,17 +11,68 @@
       font-family: 'Open Sans', sans-serif;
       background-color: #d5d7f7;
       color: #032b35;
-      padding: 2rem;
+    }
+
+    header {
+      width: 95%;
+      background-color: #eeeeee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      color: black;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      margin-right: 12px;
+    }
+
+    .company-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    nav a {
+      color: black;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #0800ca;
     }
 
     .profile-container {
       max-width: 900px;
-      margin: 0 auto;
+      margin: 4rem auto 2rem;
       background-color: #ffffff;
       padding: 3rem 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-radius: 12px;
       text-align: center;
+      animation: slideIn 1s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     .profile-container img {
@@ -29,21 +80,27 @@
       height: 180px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin-bottom: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-container img:hover {
+      transform: scale(1.05);
     }
 
     .profile-name {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.8rem;
       font-weight: bold;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
     .designation {
       font-size: 1rem;
       color: #666;
       margin-bottom: 2rem;
+      font-weight: 600;
     }
 
     .profile-content {
@@ -51,32 +108,113 @@
       line-height: 1.7;
       text-align: justify;
       padding: 0 1rem;
+      animation: fadeIn 1.5s ease 0.3s forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .back-home-section {
+      padding: 3rem 1rem;
+      background-color: #d5d7f7;
+      text-align: center;
+    }
+
+    .back-home-btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background-color: white;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-home-btn:hover {
+      background-color: #4e54fd;
+      color:white;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background-color: #4e54fd;
+      color: white;
+      text-align: center;
+      padding: 1rem 1rem;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .profile-container {
+        margin: 2rem 1rem;
+        padding: 2rem 1rem;
+      }
+
+      .profile-container img {
+        width: 140px;
+        height: 140px;
+      }
+
+      nav a {
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <img src="../images/logo.png" alt="Logo" class="logo" />
+      <div class="company-name">E Sollutions Consultancy Private Limited</div>
+    </div>
+    <nav>
+      <a href="../index.html#about-us">About Us</a>
+      <a href="../index.html#team">Our Team</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#contact-us">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Profile Section -->
   <div class="profile-container">
     <img src="../images/arun-kumar.jpg" alt="Arun Kumar K.C.">
-    <div class="profile-name">Suman Sagi</div>
+    <div class="profile-name">Arun Kumar K.C.</div>
     <div class="designation">Associate Director</div>
     <div class="profile-content">
-
-      <p>
-        <b> Arun Kumar K.C. </b> has completed Electrical & Electronics Engineering. He has a rich experience of more than 18+ years in the field of MEP design and allied services and leads successfully a team of well qualified associates, engineers & draftsmen.
-      </p>
-
-      <p>
-       He exposed to work on basis of Indian Standards. (IS, IEC and NBC) Worked in all areas of total Electrical system for all type of Industries, Sub stations, Commercial high rise buildings, Residential apartments, Multiplexes, Corporate buildings, Star hotels, Super specialty hospitals, Shopping malls & warehouses.
-      </p>
-
-      <p>
-      
-He has Good leadership skills & ability to execute various types of projects until commissioning & handing over. He has design experience in various type of industries including Fit-Out Projects, Manufacturing Plants, Data Centre, IT, ITES, Automobile Industries, Residential Sky Scrappers, Commercial / Base Buildings, Parma Industries, Warehouse Parks, Sport Complex and Stadiums, Hotels, Resorts, Hospitals & etc
-      </p>
-
+      <p><b> Arun Kumar K.C. </b> has completed Electrical & Electronics Engineering. He has a rich experience of more than 18+ years in the field of MEP design and allied services and leads successfully a team of well qualified associates, engineers & draftsmen.</p>
+      <p>He exposed to work on basis of Indian Standards. (IS, IEC and NBC) Worked in all areas of total Electrical system for all type of Industries, Sub stations, Commercial high rise buildings, Residential apartments, Multiplexes, Corporate buildings, Star hotels, Super specialty hospitals, Shopping malls & warehouses.</p>
+      <p>He has Good leadership skills & ability to execute various types of projects until commissioning & handing over. He has design experience in various type of industries including Fit-Out Projects, Manufacturing Plants, Data Centre, IT, ITES, Automobile Industries, Residential Sky Scrappers, Commercial / Base Buildings, Parma Industries, Warehouse Parks, Sport Complex and Stadiums, Hotels, Resorts, Hospitals & etc</p>
     </div>
   </div>
+
+  <!-- Back Home Button -->
+  <section class="back-home-section">
+    <div class="back-home-container">
+      <a href="../index.html" class="back-home-btn">← Back to Home Page</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 E Sollutions Consultancy Private Limited. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
