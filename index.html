@@ -18,44 +18,78 @@
       color: #032b35;
     }
 
+    * {
+    box-sizing: border-box;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    width: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4vw; /* Responsive padding left/right */
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #0800ca;
+  }
+
+  @media screen and (max-width: 768px) {
     header {
-      width: 95%;
-      background-color: #eeeeee;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      color: black;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem 1.5rem;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo {
-      width: 40px;
-      height: 40px;
-      margin-right: 12px;
-    }
-
-    .company-name {
-      font-size: 1.1rem;
-      font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
+    nav {
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+      gap: 1rem;
     }
 
     nav a {
-      color: black;
-      text-decoration: none;
-      margin-left: 2rem;
-      font-weight: bold;
-      transition: color 0.3s ease;
+      padding-left: 0.5rem;
     }
-
-    nav a:hover {
-      color: #0800ca;
-    }
+  }
 
     /* Hero Section */
     .hero {
@@ -287,62 +321,62 @@
   padding: 1.2rem;
   text-align: center;
   border-radius: 6px;
-  font-weight: regular;
   font-size: 1.1rem;
   min-width: 100px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-
-}
-
-.presence-image,
-.presence-locations h2,
-.city {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
 }
 
-.presence.visible .presence-image {
-  opacity: 1;
-  transform: translateX(0);
-  transition-delay: 0.2s;
+/* Animations */
+.presence-image,
+.presence-locations h2 {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
 
+.presence.visible .presence-image,
 .presence.visible .presence-locations h2 {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.4s;
 }
 
-.presence.visible .city:nth-child(1) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.6s;
+.presence.visible .city:nth-child(1) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.presence.visible .city:nth-child(2) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.presence.visible .city:nth-child(3) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+.presence.visible .city:nth-child(4) { transition-delay: 0.8s; opacity: 1; transform: translateY(0); }
+.presence.visible .city:nth-child(5) { transition-delay: 1s;   opacity: 1; transform: translateY(0); }
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .presence {
+    padding: 3rem 1.5rem;
+  }
+
+  .presence-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .presence-locations h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .city {
+    font-size: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .presence-image img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
-.presence.visible .city:nth-child(2) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.8s;
-}
-
-.presence.visible .city:nth-child(3) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1s;
-}
-
-.presence.visible .city:nth-child(4) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1.2s;
-}
-
-.presence.visible .city:nth-child(5) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1.4s;
-}
 
 
 
@@ -697,54 +731,73 @@
 
 
 .services-section {
-  padding: 6rem 2rem;
-  background-color: #d5d7f7;
-  font-family: 'Segoe UI', sans-serif;
-}
+      padding: 6rem 2rem;
+      background-color: #d5d7f7;
+    }
 
-.services-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #032b35;
-  text-align: center;
-}
+    .services-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      color: #032b35;
+      text-align: center;
+    }
 
-.service-box {
-  background: white;
-  border-radius: 12px;
-  padding: 2rem;
-  width: 200px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.9s ease;
-  text-align: center;
-}
+    .services-wrapper {
+      max-width: 1300px;
+      margin: auto;
+    }
 
-.service-box h4 {
-  margin: 1rem 0 0.5rem;
-  font-size: 1rem;
-  color: #032b35;
-}
+    .service-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
 
-.service-box p {
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.4;
-}
+    .service-box {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 240px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      text-align: center;
 
-/* Scroll animation delays */
-.services-section.visible .service-box:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
-.services-section.visible .service-box:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
-.services-section.visible .service-box:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
-.services-section.visible .service-box:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
-.services-section.visible .service-box:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 1s; }
-.services-section.visible .service-box:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 1.2s; }
-.services-section.visible .service-box:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 1.4s; }
-.services-section.visible .service-box:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 1.6s; }
-.services-section.visible .service-box:nth-child(9) { opacity: 1; transform: translateY(0); transition-delay: 1.8s; }
-.services-section.visible .service-box:nth-child(10) { opacity: 1; transform: translateY(0); transition-delay: 2s; }
-.services-section.visible .service-box:nth-child(11) { opacity: 1; transform: translateY(0); transition-delay: 2.2s; }
+      /* Initial state for animation */
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease;
+    }
+
+    .service-boxes.visible .service-box {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-box i {
+      color: #4e54fd;
+      margin-bottom: 1rem;
+    }
+
+    .service-box h4 {
+      font-size: 1rem;
+      margin: 1rem 0 0.5rem;
+      color: #032b35;
+    }
+
+    .service-box p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .service-box {
+        max-width: 100%;
+      }
+    }
+
+
 
 
 
@@ -762,6 +815,15 @@
   text-align: center;
 }
 
+.work-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1300px;
+  margin: auto;
+}
+
 /* Base animation state */
 .work-card {
   width: 250px;
@@ -771,46 +833,25 @@
   transition: all 0.9s ease;
 }
 
-/* Animated state (triggered by JS) */
-.area-of-works-section.visible .work-card:nth-child(1) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
+.work-card img {
+  width: 100%;
+  border-radius: 10px;
 }
-.area-of-works-section.visible .work-card:nth-child(2) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.4s;
-}
-.area-of-works-section.visible .work-card:nth-child(3) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.6s;
-}
-.area-of-works-section.visible .work-card:nth-child(4) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.8s;
-}
-.area-of-works-section.visible .work-card:nth-child(5) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1s;
-}
-.area-of-works-section.visible .work-card:nth-child(6) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1.2s;
-}
-.area-of-works-section.visible .work-card:nth-child(7) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1.4s;
-}
-.area-of-works-section.visible .work-card:nth-child(8) {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 1.6s;
+
+/* Animated state */
+.work-wrapper.visible .work-card:nth-child(1)  { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.work-wrapper.visible .work-card:nth-child(2)  { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.work-wrapper.visible .work-card:nth-child(3)  { opacity: 1; transform: translateY(0); transition-delay: 0.6s; }
+.work-wrapper.visible .work-card:nth-child(4)  { opacity: 1; transform: translateY(0); transition-delay: 0.8s; }
+.work-wrapper.visible .work-card:nth-child(5)  { opacity: 1; transform: translateY(0); transition-delay: 1.0s; }
+.work-wrapper.visible .work-card:nth-child(6)  { opacity: 1; transform: translateY(0); transition-delay: 1.2s; }
+.work-wrapper.visible .work-card:nth-child(7)  { opacity: 1; transform: translateY(0); transition-delay: 1.4s; }
+.work-wrapper.visible .work-card:nth-child(8)  { opacity: 1; transform: translateY(0); transition-delay: 1.6s; }
+
+.work-card h4 {
+  margin-top: 1rem;
+  color: #032b35;
+  font-size: 1rem;
 }
 
 
@@ -1068,18 +1109,18 @@
 <body>
 
   <!-- Header -->
-  <header>
-    <div class="header-left">
-      <img src="images/logo.png" alt="Logo" class="logo" />
-      <div class="company-name">E Sollutions Consultancy Private Limited</div>
-    </div>
-    <nav>
-      <a href="#about-us">About Us</a>
-      <a href="#team">Our Team</a>
-      <a href="#services">Services</a>
-      <a href="#contact-us">Contact</a>
-    </nav>
-  </header>
+<header>
+  <div class="header-left">
+    <img src="images/logo.png" alt="Logo" class="logo" />
+    <div class="company-name">E Sollutions Consultancy Private Limited</div>
+  </div>
+  <nav>
+    <a href="#about-us">About Us</a>
+    <a href="#team">Our Team</a>
+    <a href="#services">Services</a>
+    <a href="#contact-us">Contact</a>
+  </nav>
+</header>
 
 
 
@@ -1310,85 +1351,81 @@
 
 
 
-<!-- Font Awesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <!-- Services Offered Section -->
+  <section id="services" class="services-section">
+    <div class="services-wrapper">
+      <h2>Services Offered</h2>
 
-<!-- Services Offered Section -->
-<section id="services" class="services-section">
-  <div style="max-width: 1300px; margin: auto; text-align: center;">
-    <h2>Services Offered</h2>
+      <div class="service-boxes">
+        <div class="service-box">
+          <i class="fas fa-bolt fa-2x"></i>
+          <h4>Electrical – EHT, HT & LT</h4>
+          <p>Design and implementation of high, medium, and low tension electrical systems.</p>
+        </div>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+        <div class="service-box">
+          <i class="fas fa-lightbulb fa-2x"></i>
+          <h4>Lighting Design</h4>
+          <p>Customized lighting plans for efficiency, ambiance, and aesthetics.</p>
+        </div>
 
-      <div class="service-box">
-        <i class="fas fa-bolt fa-2x" style="color: #4e54fd;"></i>
-        <h4>Electrical – EHT, HT & LT</h4>
-        <p>Design and implementation of high, medium, and low tension electrical systems.</p>
+        <div class="service-box">
+          <i class="fas fa-gas-pump fa-2x"></i>
+          <h4>Generator Works</h4>
+          <p>End-to-end support for generator setup, backup, and integration.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fas fa-plug fa-2x"></i>
+          <h4>UPS Works</h4>
+          <p>Design and installation of uninterruptible power supply systems.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fas fa-battery-full fa-2x"></i>
+          <h4>Earthing Systems</h4>
+          <p>LPS, surge protection, and structural earthing for safety and compliance.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fas fa-snowflake fa-2x"></i>
+          <h4>HVAC Systems</h4>
+          <p>Cooling, ventilation and air quality engineering for diverse spaces.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fas fa-fire-extinguisher fa-2x"></i>
+          <h4>Fire Fighting</h4>
+          <p>Fire alarm, detection, and suppression systems for complete safety.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fas fa-bullhorn fa-2x"></i>
+          <h4>Public Address</h4>
+          <p>Audio systems for announcements, alerts, and emergency communication.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fas fa-video fa-2x"></i>
+          <h4>CCTV / Rodent</h4>
+          <p>Surveillance and rodent repellent systems for secure environments.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fas fa-network-wired fa-2x"></i>
+          <h4>IT Networking</h4>
+          <p>Robust networking solutions including iBMS and smart integration.</p>
+        </div>
+
+        <div class="service-box">
+          <i class="fas fa-toilet fa-2x"></i>
+          <h4>Health Engineering</h4>
+          <p>Public health plumbing and sanitation solutions tailored to projects.</p>
+        </div>
       </div>
-
-      <div class="service-box">
-        <i class="fas fa-lightbulb fa-2x" style="color: #4e54fd;"></i>
-        <h4>Lighting Design</h4>
-        <p>Customized lighting plans for efficiency, ambiance, and aesthetics.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-gas-pump fa-2x" style="color: #4e54fd;"></i>
-        <h4>Generator Works</h4>
-        <p>End-to-end support for generator setup, backup, and integration.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-plug fa-2x" style="color: #4e54fd;"></i>
-        <h4>UPS Works</h4>
-        <p>Design and installation of uninterruptible power supply systems.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-battery-full fa-2x" style="color: #4e54fd;"></i>
-        <h4>Earthing Systems</h4>
-        <p>LPS, surge protection, and structural earthing for safety and compliance.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-snowflake fa-2x" style="color: #4e54fd;"></i>
-        <h4>HVAC Systems</h4>
-        <p>Cooling, ventilation and air quality engineering for diverse spaces.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-fire-extinguisher fa-2x" style="color: #4e54fd;"></i>
-        <h4>Fire Fighting</h4>
-        <p>Fire alarm, detection, and suppression systems for complete safety.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-bullhorn fa-2x" style="color: #4e54fd;"></i>
-        <h4>Public Address</h4>
-        <p>Audio systems for announcements, alerts, and emergency communication.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-video fa-2x" style="color: #4e54fd;"></i>
-        <h4>CCTV / Rodent</h4>
-        <p>Surveillance and rodent repellent systems for secure environments.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-network-wired fa-2x" style="color: #4e54fd;"></i>
-        <h4>IT Networking</h4>
-        <p>Robust networking solutions including iBMS and smart integration.</p>
-      </div>
-
-      <div class="service-box">
-        <i class="fas fa-toilet fa-2x" style="color: #4e54fd;"></i>
-        <h4>Health Engineering</h4>
-        <p>Public health plumbing and sanitation solutions tailored to projects.</p>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
+
 
 
 
@@ -1397,45 +1434,43 @@
 
 
 <section class="area-of-works-section">
-  <div style="max-width: 1300px; margin: auto; text-align: center;">
-    <h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: #032b35;">Area of Works</h2>
-
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
-      <div class="work-card">
-        <img src="images/Commercials.jpg" alt="Commercials" style="width: 100%; border-radius: 10px;">
-        <h4 style="margin-top: 1rem;">Commercials and Base Buildings</h4>
-      </div>
-      <div class="work-card">
-        <img src="images/industrial.jpg" alt="Industrial" style="width: 100%; border-radius: 10px;">
-        <h4 style="margin-top: 1rem;">Industrial & Warehouse Parks</h4>
-      </div>
-      <div class="work-card">
-        <img src="images/data-centre.jpg" alt="Data Center" style="width: 100%; border-radius: 10px;">
-        <h4 style="margin-top: 1rem;">High End Data Centers</h4>
-      </div>
-      <div class="work-card">
-        <img src="images/hospital.jpg" alt="Hospitals" style="width: 100%; border-radius: 10px;">
-        <h4 style="margin-top: 1rem;">Hospital, Healthcare, Bio Tech Projects</h4>
-      </div>
-      <div class="work-card">
-        <img src="images/sky-scrapers.jpg" alt="Sky Scrapers" style="width: 100%; border-radius: 10px;">
-        <h4 style="margin-top: 1rem;">Sky Scrapper Residential Towers</h4>
-      </div>
-      <div class="work-card">
-        <img src="images/resorts.jpg" alt="Tourism" style="width: 100%; border-radius: 10px;">
-        <h4 style="margin-top: 1rem;">Tourism, Resorts, Hotels Projects</h4>
-      </div>
-      <div class="work-card">
-        <img src="images/environmental.jpg" alt="Environmental" style="width: 100%; border-radius: 10px;">
-        <h4 style="margin-top: 1rem;">Environmental Engineering</h4>
-      </div>
-      <div class="work-card">
-        <img src="images/qa-qc.jpg" alt="QA QC" style="width: 100%; border-radius: 10px;">
-        <h4 style="margin-top: 1rem;">QA & QC Engineering</h4>
-      </div>
+  <h2>Area of Works</h2>
+  <div class="work-wrapper">
+    <div class="work-card">
+      <img src="images/Commercials.jpg" alt="Commercials">
+      <h4>Commercials and Base Buildings</h4>
+    </div>
+    <div class="work-card">
+      <img src="images/industrial.jpg" alt="Industrial">
+      <h4>Industrial & Warehouse Parks</h4>
+    </div>
+    <div class="work-card">
+      <img src="images/data-centre.jpg" alt="Data Center">
+      <h4>High End Data Centers</h4>
+    </div>
+    <div class="work-card">
+      <img src="images/hospital.jpg" alt="Hospitals">
+      <h4>Hospital, Healthcare, Bio Tech Projects</h4>
+    </div>
+    <div class="work-card">
+      <img src="images/sky-scrapers.jpg" alt="Sky Scrapers">
+      <h4>Sky Scrapper Residential Towers</h4>
+    </div>
+    <div class="work-card">
+      <img src="images/resorts.jpg" alt="Tourism">
+      <h4>Tourism, Resorts, Hotels Projects</h4>
+    </div>
+    <div class="work-card">
+      <img src="images/environmental.jpg" alt="Environmental">
+      <h4>Environmental Engineering</h4>
+    </div>
+    <div class="work-card">
+      <img src="images/qa-qc.jpg" alt="QA QC">
+      <h4>QA & QC Engineering</h4>
     </div>
   </div>
 </section>
+
 
 
 
@@ -1580,32 +1615,47 @@
   if (scopeSection) {
     observerScope.observe(scopeSection);
   }
-  const servicesSection = document.querySelector('.services-section');
+  document.addEventListener("DOMContentLoaded", function () {
+      const serviceBoxes = document.querySelector('.service-boxes');
 
-  const observerServices = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (!serviceBoxes) return;
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // run once
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+
+      observer.observe(serviceBoxes);
     });
-  }, { threshold: 0.4 });
 
-  if (servicesSection) {
-    observerServices.observe(servicesSection);
-  }
-  const areaSection = document.querySelector('.area-of-works-section');
 
-  const observerArea = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const workWrapper = document.querySelector('.work-wrapper');
+
+    if (!workWrapper) return;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.2
     });
-  }, { threshold: 0.4 });
 
-  if (areaSection) {
-    observerArea.observe(areaSection);
-  }
+    observer.observe(workWrapper);
+  });
+
+
 
   const projectSection = document.querySelector('.projects-section');
   const countElements = document.querySelectorAll('.count');
