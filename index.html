@@ -20,10 +20,6 @@
 
     * {
     box-sizing: border-box;
-  }
-
-  * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
@@ -34,7 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 4vw; /* Responsive padding left/right */
+    padding: 1rem 4vw;
     color: black;
     font-family: 'Segoe UI', sans-serif;
   }
@@ -72,24 +68,59 @@
     color: #0800ca;
   }
 
-  @media screen and (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem 1.5rem;
-    }
-
-    nav {
-      flex-direction: column;
-      width: 100%;
-      margin-top: 1rem;
-      gap: 1rem;
-    }
-
-    nav a {
-      padding-left: 0.5rem;
-    }
+  /* Hide desktop nav on mobile */
+  .mobile-nav {
+    display: none;
   }
+
+  @media screen and (max-width: 768px) {
+    nav {
+      display: none;
+    }
+
+    .mobile-nav {
+      display: block;
+    }
+
+    .mobile-nav select {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  color: #032b35;
+  border: 1px solid #ccc;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23032b35'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+  cursor: pointer;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+.mobile-nav select:hover {
+  border-color: #4e54fd;
+  background-color: #f9f9f9;
+}
+
+.mobile-nav select:focus {
+  outline: none;
+  border-color: #4e54fd;
+  background-color: #ffffff;
+}
+
+
+  }
+
+    
+
+
+
 
     /* Hero Section */
     .hero {
@@ -902,167 +933,118 @@
 
 
 
-.explore-contact-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 3rem;
-  }
-
-  .explore-more,
-  .contact-us {
-    flex: 1 1 45%;
-  }
-
-  .explore-more h2,
-  .contact-us h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #4e54fd;
-  }
-
-  .explore-more a {
-    display: block;
-    background-color: #4e54fd;
-    color: white;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-align: center;
-  }
-
-  .explore-more a:hover {
-    background-color: #0800ca;
-    transform: translateY(-3px);
-  }
-
-  .explore-contact-wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 3rem;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  .explore-more,
-  .contact-us {
-    flex: 1 1 45%;
-  }
-
-  .explore-more h2,
-  .contact-us h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #032b35;
-  }
-
-  .explore-btn {
-    display: block;
-    background-color: #0800ca;
-    color: white;
-    padding: 1rem 1.5rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-
-  .explore-btn:hover {
-    background-color: #0800ca;
-    transform: translateY(-3px);
-  }
-
-  .contact-us p {
-    margin-bottom: 0.8rem;
-    font-size: 1rem;
-  }
-
-  .contact-us a {
-    color: #032b35;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  .whatsapp-btn {
-    display: inline-block;
-    background-color: #25D366;
-    color: white;
-    padding: 0.8rem 1.2rem;
-    border-radius: 6px;
-    font-weight: bold;
-    margin: 1rem 0;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .whatsapp-btn:hover {
-    background-color: #1ebe57;
-    transform: translateY(-2px);
-  }
-
-  .contact-us form {
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .contact-us input,
-  .contact-us textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    width: 100%;
-  }
-
-  .contact-us textarea {
-    height: 100px;
-    resize: vertical;
-  }
-
-  .contact-us button {
-    background-color: #4e54fd;
-    color: white;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .contact-us button:hover {
-    background-color: #0800ca;
-  }
-
-  @media (max-width: 768px) {
-    .explore-contact-wrapper {
-      flex-direction: column;
-    }
-
-    @media (max-width: 768px) {
-  .contact-us form {
-    margin-bottom: 3rem;
-  }
+.explore-contact-section {
+  padding: 4rem 1rem;
+  background-color: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-    .explore-more,
-    .contact-us {
-      flex: 1 1 100%;
-    }
-  }
+.explore-contact-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
+.explore-more,
+.contact-us {
+  flex: 1 1 45%;
+}
 
-  /* Base animation state */
+.explore-more h2,
+.contact-us h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #032b35;
+}
+
+.explore-btn {
+  display: block;
+  background-color: #4e54fd;
+  color: white;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.explore-btn:hover {
+  background-color: #0800ca;
+  transform: translateY(-3px);
+}
+
+.contact-us p {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.contact-us a {
+  color: #032b35;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-us form {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-us input,
+.contact-us textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.contact-us textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.contact-us button {
+  background-color: #4e54fd;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-us button:hover {
+  background-color: #0800ca;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  margin: 1rem 0;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1ebe57;
+  transform: translateY(-2px);
+}
+
+/* Animations */
 .animate-left,
 .animate-right,
 .animate-up {
@@ -1071,19 +1053,16 @@
   transition: all 0.9s ease;
 }
 
-/* When visible */
 .explore-contact-section.visible .animate-left {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.3s;
 }
-
 .explore-contact-section.visible .animate-right {
   opacity: 1;
   transform: translateX(0);
   transition-delay: 0.5s;
 }
-
 .explore-contact-section.visible .animate-up {
   opacity: 1;
   transform: translateY(0);
@@ -1094,6 +1073,35 @@
 .explore-contact-section.visible .explore-btn:nth-child(4) { transition-delay: 0.6s; }
 .explore-contact-section.visible .explore-btn:nth-child(5) { transition-delay: 0.8s; }
 .explore-contact-section.visible .explore-btn:nth-child(6) { transition-delay: 1s; }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .explore-contact-wrapper {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .explore-more,
+  .contact-us {
+    flex: 1 1 100%;
+  }
+
+  .explore-more h2,
+  .contact-us h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .explore-btn {
+    font-size: 0.95rem;
+  }
+
+  .contact-us input,
+  .contact-us textarea {
+    font-size: 0.95rem;
+  }
+}
+
 
 
 
@@ -1108,19 +1116,33 @@
 
 <body>
 
-  <!-- Header -->
+  
 <header>
   <div class="header-left">
     <img src="images/logo.png" alt="Logo" class="logo" />
     <div class="company-name">E Sollutions Consultancy Private Limited</div>
   </div>
+
+  <!-- Desktop Navigation -->
   <nav>
     <a href="#about-us">About Us</a>
     <a href="#team">Our Team</a>
     <a href="#services">Services</a>
     <a href="#contact-us">Contact</a>
   </nav>
+
+  <!-- Mobile Dropdown -->
+  <div class="mobile-nav">
+    <select onchange="if(this.value) window.location.href=this.value;">
+      <option value="">Menu</option>
+      <option value="#about-us">About Us</option>
+      <option value="#team">Our Team</option>
+      <option value="#services">Services</option>
+      <option value="#contact-us">Contact</option>
+    </select>
+  </div>
 </header>
+
 
 
 
@@ -1265,7 +1287,7 @@
   </div>
 
   <div class="org-chart-link">
-    <a href="downloads/organization-chart.pdf" download>Download Organization Chart (PDF)</a>
+    <a href="downloads/organization-chart.html" download>View our Organization Chart (PDF)</a>
   </div>
 </section>
 
@@ -1535,8 +1557,8 @@
       <a class="explore-btn animate-up" href="presentations/technical-presentation.html" class="explore-btn">Technical Presentation</a>
       <a class="explore-btn animate-up" href="presentations/revit-capability.html" class="explore-btn">In-House Capability with Revit</a>
       <a class="explore-btn animate-up" href="presentations/sustainability-proposals.html" class="explore-btn">Sustainability Proposals</a>
-      <a class="explore-btn animate-up" href="downloads/clientele.pdf" class="explore-btn">Clientele</a>
-      <a class="explore-btn animate-up" href="downloads/e-sollutions-company-profile.pdf" class="explore-btn" target="_blank">Download Full Company Profile</a>
+      <a class="explore-btn animate-up" href="downloads/clientele.html" class="explore-btn">View our Clientele</a>
+      <a class="explore-btn animate-up" href="downloads/e-sollutions-company-profile.html" class="explore-btn" target="_blank">Download Full Company Profile</a>
     </div>
 
     <!-- Right Column: Contact Us -->

@@ -18,44 +18,106 @@
       color: #032b35;
     }
 
-    header {
-      width: 95%;
-      background-color: #eeeeee;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      color: black;
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    width: 100%;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4vw;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+  }
+
+  .company-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #0800ca;
+  }
+
+  /* Hide desktop nav on mobile */
+  .mobile-nav {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    nav {
+      display: none;
     }
 
-    .header-left {
-      display: flex;
-      align-items: center;
+    .mobile-nav {
+      display: block;
     }
 
-    .logo {
-      width: 40px;
-      height: 40px;
-      margin-right: 12px;
-    }
+    .mobile-nav select {
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #f4f4f4;
+  color: #032b35;
+  border: 1px solid #ccc;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23032b35'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+  cursor: pointer;
+  transition: border 0.3s ease, background-color 0.3s ease;
+}
 
-    .company-name {
-      font-size: 1.1rem;
-      font-weight: bold;
-      font-family: 'Montserrat', sans-serif;
-    }
+.mobile-nav select:hover {
+  border-color: #4e54fd;
+  background-color: #f9f9f9;
+}
 
-    nav a {
-      color: black;
-      text-decoration: none;
-      margin-left: 2rem;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
+.mobile-nav select:focus {
+  outline: none;
+  border-color: #4e54fd;
+  background-color: #ffffff;
+}
 
-    nav a:hover {
-      color: #0800ca;
-    }
+  }
+
+
+
 
     /* Hero Section */
 .hero {
@@ -357,21 +419,31 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="header-left">
-      <img src="../images/logo.png" alt="Logo" class="logo" />
-      <div class="company-name">E Sollutions Consultancy Private Limited</div>
-    </div>
-    <nav>
-      <a href="../index.html#about-us">About Us</a>
-      <a href="../index.html#team">Our Team</a>
-      <a href="../index.html#services">Services</a>
-      <a href="../index.html#contact-us">Contact</a>
-    </nav>
-  </header>
+  <div class="header-left">
+    <img src="../images/logo.png" alt="Logo" class="logo" />
+    <div class="company-name">E Sollutions Consultancy Private Limited</div>
+  </div>
 
+  <!-- Desktop Navigation -->
+  <nav>
+    <a href="../index.html#about-us">About Us</a>
+    <a href="../index.html#team">Our Team</a>
+    <a href="../index.html#services">Services</a>
+    <a href="../index.html#contact-us">Contact</a>
+  </nav>
 
+  <!-- Mobile Dropdown -->
+  <div class="mobile-nav">
+    <select onchange="if(this.value) window.location.href=this.value;">
+      <option value="">Menu</option>
+      <option value="../index.html#about-us">About Us</option>
+      <option value="../index.html#team">Our Team</option>
+      <option value="../index.html#services">Services</option>
+      <option value="../index.html#contact-us">Contact</option>
+    </select>
+  </div>
+</header>
 
 
 
